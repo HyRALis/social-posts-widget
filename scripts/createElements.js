@@ -1,28 +1,69 @@
-export const createElementWithClass = (tag="div", className="", id="", attributesObject={} ) => {
-    let createdElement = document.createElement(tag);
-    className.length !== 0 ? createdElement.className = className : "";
-    id.length !== 0 ? createdElement.id = id : "";
 
+
+export const createElement = (
+    tag = "div",
+    className = "",
+    id = "",
+    attributesObject = {},
+    innerHtml = ""
+) => {
+
+    let createdElement = document.createElement(tag);
+    
+    className.length !== 0 ? (createdElement.className = className) : "";
+    id.length !== 0 ? (createdElement.id = id) : "";
+    createdElement.innerHTML = innerHtml;
+    
     if (!isObjectEmpty(attributesObject)) {
         const attributesProperties = Object.keys(attributesObject);
-        attributesProperties.forEach((prop,index)=> {
-            createdElement.setAttribute(prop,attributesProperties[prop]);
-        })
+        attributesProperties.forEach((prop) => {
+            createdElement.setAttribute(prop, attributesObject[prop]);
+        });
     }
+    
     return createdElement;
-}
+};
 
-export const append = (parentClassName, childClassName) => {
-    if (document.getElementsByClassName(parentClassName).length === 0 || document.getElementsByClassName(childClassName).length === 0  ) {
-        return console.error("Specify better classNames");
-    }else {
-        let parentNode = document.getElementsByClassName(parentClassName)[0];
-        let childNode = document.getElementsByClassName(childClassName)[0];
-
+export const append = (parentSelector, childNode) => {
+        let parentNode = document.querySelector(parentSelector);
+        // debugger;
         parentNode.appendChild(childNode);
-    }
-}
- 
+};
+
+export const makeParagraphWithHashtagsLinks = (string) => {
+    let paragraphArray = string.split(" ");
+    paragraphArray = paragraphArray.map((word) => {
+        if (isHastag(word)) {
+            return (word = `<a href="#">${word}</a>`);
+        } else return word;
+    });
+    return paragraphArray.join(" ");
+};
+
+const isHastag = (word) => {
+    return (
+        word.split("").filter((char) => {
+            return char === "#";
+        }).length !== 0
+    );
+};
+
 const isObjectEmpty = (object) => {
-    return Object.keys(obj).length === 0;
+    return Object.keys(object).length === 0;
+};
+
+const addSvgOfNetwork = (networkName) => {
+    switch (networkName) {
+        case "facebook":
+            
+            break;
+    
+        case "instagram":
+            
+            break;
+    
+        default:
+
+            break;
+    }
 }

@@ -166,6 +166,16 @@ p {
     height: 12px;
 }
 
+.loadmore-container{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: max-content;
+    padding-top: 55px;
+}
+
 .btn-borderonly {
     padding: 1rem 1.5rem;
     font-size: 14px;
@@ -173,8 +183,24 @@ p {
     color: #ffffff;
     background-color: #00000073;
     border: 2px solid #ffffff;
+    border-radius: 5px;
     outline: none;
     cursor: pointer;
+}
+
+.btn-primary{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #0081FF;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
 @media screen and (min-width:768px) {
