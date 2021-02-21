@@ -77,23 +77,23 @@ window.openModal = ( el ) => {
         closeModal();
     }
   }, {once: true})
-  append("#widget .modal-backdrop", createElement("div", "modal"));
-  append("#widget .modal", createElement("img", "modal-image","", {
+  append("body .modal-backdrop", createElement("div", "modal"));
+  append("body .modal", createElement("img", "modal-image","", {
     src: cardData.image,
     alt: `Posted image by ${cardData.name}`, 
   }));
-  append("#widget .modal", createElement("div", "modal-content"));
-  append("#widget .modal-content", createElement("div", "modal-creator"));
-  append(`#widget .modal-creator`, createElement("div", "poster-info-section"));
-  append(`#widget .modal-creator`, createElement("a", `network-svg ${cardData.source_type}`,"",{href: cardData.source_link}));
-  append(`#widget .modal-content .poster-info-section`,createElement("img", "profile-image", "", {
+  append("body .modal", createElement("div", "modal-content"));
+  append("body .modal-content", createElement("div", "modal-creator"));
+  append(`body .modal-creator`, createElement("div", "poster-info-section"));
+  append(`body .modal-creator`, createElement("a", `network-svg ${cardData.source_type}`,"",{href: cardData.source_link}));
+  append(`body .modal-content .poster-info-section`,createElement("img", "profile-image", "", {
     src: cardData.profile_image,
     alt: `Avatar of ${cardData.name}`,
   }));
   
-  append(`#widget .modal .poster-info-section`,createElement("div","post-info"));
+  append(`body .modal .poster-info-section`,createElement("div","post-info"));
   
-  append(`#widget .modal .post-info`,createElement(
+  append(`body .modal .post-info`,createElement(
     "p",
     "poster-name",
     "",
@@ -102,7 +102,7 @@ window.openModal = ( el ) => {
   ));
 
   
-  append(`#widget .modal .post-info`,createElement(
+  append(`body .modal .post-info`,createElement(
     "p",
     "card-caption",
     "",
@@ -110,7 +110,7 @@ window.openModal = ( el ) => {
     cardData.date
   ));
 
-  append(`#widget .modal-content`, createElement(
+  append(`body .modal-content`, createElement(
     "p",
     "card-caption",
     "",
@@ -118,10 +118,10 @@ window.openModal = ( el ) => {
     makeParagraphWithHashtagsLinks(cardData.caption)
   ));
 
-  append("#widget .modal-content", createElement("div", "modal-likes"));
+  append("body .modal-content", createElement("div", "modal-likes"));
 
-  append(`#widget .modal-likes`, createElement("div","like-svg"));
-  append(`#widget .modal-likes`, createElement("span","","",{},cardData.likes));
+  append(`body .modal-likes`, createElement("div","like-svg"));
+  append(`body .modal-likes`, createElement("span","","",{},cardData.likes));
 
 }
 
