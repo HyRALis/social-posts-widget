@@ -51,19 +51,3 @@ const isHastag = (word) => {
 const isObjectEmpty = (object) => {
     return Object.keys(object).length === 0;
 };
-
-const addSvgOfNetwork = (networkName) => {
-    switch (networkName) {
-        case "facebook":
-            
-            break;
-    
-        case "instagram":
-            
-            break;
-    
-        default:
-
-            break;
-    }
-}

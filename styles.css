@@ -129,12 +129,20 @@ p {
 .network-svg{
     width: 24px;
     height: 24px;
-    background-color: blue;
+}
+
+.network-svg.facebook {
+    background-image: url("./assets/icons/facebook.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.network-svg.instagram {
+    background-image: url("./assets/icons/instagram-logo.svg");
 }
 
 .card-image{
     max-width: 100%;
-    height: auto;
+    height: 325px;
     margin: 16px 0;
     object-fit: cover;
 }
@@ -162,8 +170,12 @@ p {
 }
 
 .like-svg{
-    width: 14px;
-    height: 12px;
+    width: 15px;
+    height: 13px;
+    margin-right: 4px;
+    background-image: url(./assets/icons/heart.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .loadmore-container{

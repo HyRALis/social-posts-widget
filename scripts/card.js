@@ -11,8 +11,7 @@ const createCardElement = (cardPropertiesObject, key) => {
   append(`#card${key}`, createElement("div", "card-content"));
 
   append(`#card${key}`, createElement("div", "like-count"));
-    
-  append(`#card${key}`, createElement("div", "card-overlay"));
+
 
   // CREATE CHILDREN FOR CARD-CONTENT
   
@@ -34,7 +33,7 @@ const createCardElement = (cardPropertiesObject, key) => {
   // CREATE CHILDREN FOR CARD-HEADER
   
   append(`#card${key} .card-header`, createElement("div", "poster-info-section"));
-
+  append(`#card${key} .card-header`, createElement("a", `network-svg ${cardPropertiesObject.source_type}`,"",{href: cardPropertiesObject.source_link}));
   append(`#card${key} .poster-info-section`,createElement("img", "profile-image", "", {
     src: cardPropertiesObject.image,
     alt: `Avatar of ${cardPropertiesObject.name}`,
@@ -61,10 +60,8 @@ const createCardElement = (cardPropertiesObject, key) => {
 
   // CREATE THE LIKES COUNTER AREA
 
+  append(`#card${key} .like-count`, createElement("div","like-svg"));
   append(`#card${key} .like-count`, createElement("span","","",{},cardPropertiesObject.likes));
-  // CREATE THE read more in overlay
-
-  append(`#card${key} .card-overlay`, createElement("button","btn-borderonly","",{},"READ MORE"));
 };
 
 export default createCardElement;
