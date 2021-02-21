@@ -40,6 +40,7 @@ p {
     margin: 89px 0;
     overflow-x: hidden;
     overflow-y: hidden;
+    position: relative;
 }
 
 .cards-container {
@@ -69,15 +70,7 @@ p {
 }
 
 .card-overlay{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    background-color: #00000073;
+    
 }
 
 .widget-card:hover .card-overlay{
@@ -215,9 +208,73 @@ p {
     border-radius: 5px;
 }
 
+.modal-backdrop{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #00000073;
+    z-index: 100;
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    max-width: 875px;
+    min-height: 530px;
+    padding: 10px;
+    background-color: #ffffff;
+}
+
+.modal-image{
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.modal-content{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0 0 0;
+}
+
+
+.modal-creator{
+    border-bottom: 1px solid #E0E0E0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    margin-bottom: 25px ;
+}
+.modal-likes {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 30px;
+}
+
 @media screen and (min-width:768px) {
     .cards-container{
         grid-template-columns: repeat(2, 1fr);
+    }
+    .modal{
+        flex-direction: row;
+    }
+    .modal-image{
+        width: 60%;
+        height: unset;
+    }
+    .modal-content{
+        width: 100%;
+        margin-left: 10px;
+        padding-top: 0;
     }
 }
 @media screen and (min-width:992px) {
