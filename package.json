@@ -1,0 +1,17 @@
+{
+  "name": "plain-social-cards",
+  "version": "1.0.0",
+  "description": "Widget getting post from social networks and displaying them",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "social",
+    "network",
+    "post",
+    "widget"
+  ],
+  "author": "Petar Trajanoski",
+  "license": "ISC"
+}

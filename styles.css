@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Utility classes */
+
+.flex {
+    display: flex;
+}
+
+.flex-col{
+    flex-direction: column;
+}
+
+.items-center{
+    align-items: center;
+}
+
+.object-cover{
+    object-fit: cover;
+}
+
+.w-100{
+    width: 100%;
+}
+
+p {
+    font-weight: 400;
+    line-height: 22px;
+}
+
+/* Specific classes */
+
+.widget-container{
+    width: 100vw;
+    margin: 89px 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(360px, 430px));
+    grid-auto-rows: minmax(570px,auto);
+    gap: 10px;
+    max-width: max-content;
+    margin:0 auto;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    
+}
+
+.widget-card{
+    display: flex;
+    flex-shrink: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    max-width: 396px;
+    padding: 15px;
+    background-color: #ffffff;
+    border: 1px solid #E0E0E0;
+    cursor: pointer;
+}
+
+.card-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: #00000073;
+}
+
+.widget-card:hover .card-overlay{
+    display: flex;
+}
+
+.card-content{
+    display: flex;
+    flex-direction: column;
+}
+
+.card-header{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.poster-info-section{
+    display: flex;
+    align-items: center;
+}
+
+.profile-image{
+    width: 48px;
+    height: 48px;
+    margin: 1px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.post-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 15px;
+}
+.poster-name{
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 21px;
+}
+
+.post-date{
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.network-svg{
+    width: 24px;
+    height: 24px;
+    background-color: blue;
+}
+
+.card-image{
+    max-width: 100%;
+    height: auto;
+    margin: 16px 0;
+    object-fit: cover;
+}
+
+.card-caption{
+    font-size: 14;
+    margin: 0 0 2px 0;
+}
+
+.card-caption > a {
+    color: #4F9DE8;
+    text-decoration: none;
+}
+
+.like-count{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #E0E0E0;
+    padding-top: 18px;
+}
+.like-count > span{
+    font-size: 14px;
+    line-height: 14px;
+}
+
+.like-svg{
+    width: 14px;
+    height: 12px;
+}
+
+.btn-borderonly {
+    padding: 1rem 1.5rem;
+    font-size: 14px;
+    font-weight: 700;
+    color: #ffffff;
+    background-color: #00000073;
+    border: 2px solid #ffffff;
+    outline: none;
+    cursor: pointer;
+}
+
+@media screen and (min-width:768px) {
+    .cards-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media screen and (min-width:992px) {
+    .cards-container{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+
