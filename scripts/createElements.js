@@ -1,12 +1,12 @@
 
 
-export const createElement = (
+export const createElement = ({
     tag = "div",
     className = "",
     id = "",
     attributesObject = {},
     innerHtml = ""
-) => {
+}) => {
 
     let createdElement = document.createElement(tag);
     
