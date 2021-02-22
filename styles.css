@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
+:root{
+    --main-bg-color: #ffffff;
+    --main-border-color: #E0E0E0;
+    --primary-color: #0081FF;
+    --tranparent-black: #00000073;
+    --box-shadow: 0px 7px 10px 1px rgba(0,0,0,0.4);
+    --main-spacing: 10px;
+    --main-transition:  all 0.7s cubic-bezier(.32,.11,.18,.98);
+}
+
 *{
     padding: 0;
     margin: 0;
@@ -26,12 +36,12 @@ p {
     display: grid;
     grid-template-columns: repeat(1, minmax(360px, 430px));
     grid-auto-rows: minmax(570px,auto);
-    gap: 10px;
+    gap: var(--main-spacing);
     max-width: max-content;
+    padding: 0 15px 15px;
     margin:0 auto;
     overflow-x: hidden;
     overflow-y: hidden;
-    
 }
 
 .widget-card{
@@ -43,20 +53,18 @@ p {
     position: relative;
     max-width: 396px;
     padding: 15px;
-    background-color: #ffffff;
-    border: 1px solid #E0E0E0;
+    background-color: var(--main-bg-color);
+    border: 1px solid var(--main-border-color);
     cursor: pointer;
+    transition: var(--main-transition);
 }
 .widget-card:hover{
     z-index: 50;
-    -webkit-box-shadow: 0px 7px 10px 1px rgba(0,0,0,0.4);
-    -moz-box-shadow: 0px 7px 10px 1px rgba(0,0,0,0.4);
-    box-shadow: 0px 7px 10px 1px rgba(0,0,0,0.4);
+    -webkit-box-shadow: var(--box-shadow);
+    -moz-box-shadow: var(--box-shadow);
+    box-shadow: var(--box-shadow);
 }
 
-.widget-card:hover .card-overlay{
-    display: flex;
-}
 
 .card-content{
     display: flex;
@@ -135,7 +143,7 @@ p {
     width: 100%;
     display: flex;
     align-items: center;
-    border-top: 1px solid #E0E0E0;
+    border-top: 1px solid var(--main-border-color);
     padding-top: 18px;
 }
 
@@ -154,13 +162,12 @@ p {
 }
 
 .loadmore-container{
-    
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: max-content;
-    padding-top: 55px;
+    padding-top: 40px;
 }
 
 
@@ -168,16 +175,22 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+    padding: 18px;
     font-size: 16px;
     font-weight: 700;
     text-align: center;
     color: white;
-    background-color: #0081FF;
-    border:none;
+    background-color: var(--primary-color);
+    border:2px solid var(--primary-color);
     border-radius: 5px;
     outline: none;
     cursor: pointer;
+    transition: var(--main-transition);
+}
+
+.btn-primary:hover{
+    background-color: transparent;
+    color: var(--primary-color);
 }
 
 .modal-backdrop{
@@ -189,7 +202,7 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #00000073;
+    background-color: var(--tranparent-black);
     z-index: 100;
 }
 
@@ -199,8 +212,8 @@ p {
     width: 95%;
     max-width: 875px;
     min-height: 530px;
-    padding: 10px;
-    background-color: #ffffff;
+    padding: var(--main-spacing);
+    background-color: var(--main-bg-color);
 }
 
 .modal-image{
@@ -218,7 +231,7 @@ p {
 
 
 .modal-creator{
-    border-bottom: 1px solid #E0E0E0;
+    border-bottom: 1px solid var(--main-border-color);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -245,7 +258,7 @@ p {
     }
     .modal-content{
         width: 100%;
-        margin-left: 10px;
+        margin-left: var(--main-spacing);
         padding-top: 0;
     }
 }
