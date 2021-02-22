@@ -2,6 +2,7 @@ import {
   createElement,
   append,
   makeParagraphWithHashtagsLinks,
+  dateFormater
 } from "./createElements.js";
 
 const createCardElement = (cardPropertiesObject, key) => {
@@ -81,7 +82,7 @@ const createCardElement = (cardPropertiesObject, key) => {
     createElement({
       tag: "p",
       className: "poster-name",
-      innerHTML: cardPropertiesObject.name,
+      innerHtml: cardPropertiesObject.name,
     })
   );
 
@@ -89,13 +90,20 @@ const createCardElement = (cardPropertiesObject, key) => {
     `#card-${key} .post-info`,
     createElement({
       tag: "p",
-      className: "card-caption",
-      innerHtml: cardPropertiesObject.date,
+      className: "post-date",
+      innerHtml: dateFormater(cardPropertiesObject.date).postedDate,
+    })
+  );
+  append(
+    `#card-${key} .post-date`,
+    createElement({
+      tag: "p",
+      className: "post-time",
+      innerHtml: dateFormater(cardPropertiesObject.date).postedTime,
     })
   );
 
   // CREATE THE LIKES COUNTER AREA
-
   append(`#card-${key} .like-count`, createElement({ className: "like-svg" }));
   append(
     `#card-${key} .like-count`,

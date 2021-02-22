@@ -104,8 +104,27 @@ p {
 }
 
 .post-date{
+    position: relative;
     font-size: 12px;
     line-height: 16px;
+}
+
+.post-time{
+    position: absolute;
+    top: calc(50% - 1px);
+    right: -25px;
+    transform: translateY(-50%);
+    display: none;
+    padding: 2px 3px;
+    font-size: 12px;
+    line-height: 14px;
+    color: var(--main-bg-color);
+    background-color: var(--tranparent-black);
+    border-radius: 5px;
+}
+
+.post-date:hover > .post-time{
+    display: block;
 }
 
 .network-svg{
