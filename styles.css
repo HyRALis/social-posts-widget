@@ -38,7 +38,7 @@ p {
     grid-auto-rows: minmax(570px,auto);
     gap: var(--main-spacing);
     max-width: max-content;
-    padding: 0 15px 15px;
+    padding: 0 0 15px;
     margin:0 auto;
     overflow-x: hidden;
     overflow-y: hidden;
@@ -271,6 +271,7 @@ p {
 @media screen and (min-width:768px) {
     .cards-container{
         grid-template-columns: repeat(2, 1fr);
+        padding: 0 15px 15px;
     }
     .modal{
         flex-direction: row;
