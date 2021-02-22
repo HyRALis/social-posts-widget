@@ -16,12 +16,13 @@ window.openModal = ( element ) => {
     "body",
     createElement({
       className: "modal-backdrop",
-      atributesObject: { onclick: "closeModal()" },
+      attributesObject: { onclick: "closeModal()" },
     })
   );
   window.addEventListener(
     "keyup",
     (e) => {
+        debugger;
       if (e.key === "Escape") {
         closeModal();
       }
