@@ -26,7 +26,6 @@ export const createElement = ({
 
 export const append = (parentSelector, childNode) => {
         let parentNode = document.querySelector(parentSelector);
-        // debugger;
         parentNode.appendChild(childNode);
 };
 

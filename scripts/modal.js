@@ -22,14 +22,13 @@ window.openModal = ( element ) => {
   window.addEventListener(
     "keyup",
     (e) => {
-        debugger;
       if (e.key === "Escape") {
         closeModal();
       }
     },
     { once: true }
   );
-  append("body .modal-backdrop", createElement({ className: "modal" }));
+  append("body .modal-backdrop", createElement({ className: "modal show" }));
   append(
     "body .modal",
     createElement({
