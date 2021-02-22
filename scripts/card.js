@@ -68,7 +68,7 @@ const createCardElement = (cardPropertiesObject, key) => {
       tag: "img",
       className: "profile-image",
       attributesObject: {
-        src: cardPropertiesObject.image,
+        src: cardPropertiesObject.profile_image,
         alt: `Avatar of ${cardPropertiesObject.name}`,
       },
     })
